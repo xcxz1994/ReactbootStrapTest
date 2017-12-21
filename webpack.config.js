@@ -7,9 +7,11 @@ module.exports = {
         filename: 'bundle.js' //打包文件名
     },
     plugins: [
+
         new HtmlWebpackPlugin({
             template: './public/index.html', //指定模板路径
             filename: 'index.html', //指定文件名
+
         })
     ],
     module: {

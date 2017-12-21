@@ -10,9 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "antd": "^2.1.0",
+
     "bootstrap": "^3.3.7",
+    "bootstrap-table": "^1.11.2",
+    "jquery": "^3.2.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
+
+    "react-bootstrap-table": "^4.3.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {

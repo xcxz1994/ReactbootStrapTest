@@ -1,32 +1,49 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import {Button,ButtonToolbar} from 'react-bootstrap';
+
+import {Grid,Row,Col,ListGroup,ListGroupItem,CarouselItem,Tooltip} from 'react-bootstrap';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+var products = [{
+    id: 1,
+    name: "Product1",
+    price: 120
+}, {
+    id: 2,
+    name: "Product2",
+    price: 80
+}];
 
 class App extends Component {
+
     render() {
+
         return(
-            <ButtonToolbar>
-                {/* Standard button */}
-                <Button>Default</Button>
+            <Grid>
+            <Row className="show-grid">
+                <Col xs={4} md={4}>
+                    <ListGroup>
+                        <ListGroupItem>
+                            <CarouselItem>
 
-                {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
-                <Button bsStyle="primary">Primary</Button>
 
-                {/* Indicates a successful or positive action */}
-                <Button bsStyle="success">Success</Button>
+                            </CarouselItem>
+                        </ListGroupItem>
+                        <ListGroupItem>Item 2</ListGroupItem>
+                        <ListGroupItem>...</ListGroupItem>
+                    </ListGroup>
+                </Col>
+                <Col xs={12} md={8}>
+                    <BootstrapTable data={products} striped hover>
+                        <TableHeaderColumn isKey dataField='id'>Product ID</TableHeaderColumn>
+                        <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+                        <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+                    </BootstrapTable>
+                </Col>
+            </Row>
+            </Grid>
 
-                {/* Contextual button for informational alert messages */}
-                <Button bsStyle="info">Info</Button>
 
-                {/* Indicates caution should be taken with this action */}
-                <Button bsStyle="warning">Warning</Button>
 
-                {/* Indicates a dangerous or potentially negative action */}
-                <Button bsStyle="danger">Danger</Button>
-
-                {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
-                <Button bsStyle="link">Link</Button>
-            </ButtonToolbar>
         );
     }
 }
